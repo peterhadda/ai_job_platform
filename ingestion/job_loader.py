@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 from typing import List, Tuple, Optional
 
+import logger
 import pandas as pd
 
 
@@ -56,7 +57,6 @@ REQUIRED_COLUMNS = [
     "description",
     "url",
     "source",
-    # job_id is optional because we can generate it
 ]
 
 def validate_columns(df: pd.DataFrame) -> None:
@@ -66,9 +66,7 @@ def validate_columns(df: pd.DataFrame) -> None:
 
 
 def clean_text_series(s: pd.Series) -> pd.Series:
-    # Convert to string safely, keep NaN as NaN
     s = s.astype("string")
-    # Strip whitespace
     s = s.str.strip()
     return s
 
@@ -86,12 +84,11 @@ def load_and_clean_jobs(
     logger.info(f"Rows loaded (raw): {len(df)}")
     validate_columns(df)
 
-    # Normalize key fields
+
     for col in ["title", "company", "location", "description", "url", "source", "date_posted"]:
         df[col] = clean_text_series(df[col])
 
-    # Optional: normalize casing for company/location (keep title case feel)
-    # You can choose .str.lower() if you prefer strict normalization
+
     df["company"] = df["company"].str.replace(r"\s+", " ", regex=True)
     df["location"] = df["location"].str.replace(r"\s+", " ", regex=True)
 
@@ -155,13 +152,15 @@ def load_and_clean_jobs(
 
 
 if __name__ == "__main__":
-    # Example run:
-    # python src/ingestion/jobs_loader.py
-    input_csv = Path("data/raw/jobs/jobs.csv")
-    output_csv = Path("data/processed/jobs_clean.csv")
-    log_path = Path("logs/jobs_loader.log")
+    BASE_DIR = Path(__file__).resolve().parents[1]
+
+
+    input_csv = BASE_DIR / "data" / "raw" / "jobs" / "jobs.csv"
+    output_csv = BASE_DIR / "data" / "processed" / "jobs_clean.csv"
+    log_path = BASE_DIR / "logs" / "jobs_loader.log"
+
 
     load_and_clean_jobs(input_csv, output_csv, log_path)
-:
+
 
 
