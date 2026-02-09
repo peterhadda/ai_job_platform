@@ -2,6 +2,7 @@ import hashlib
 import os
 import re
 from datetime import datetime, timezone
+from idlelib.iomenu import errors
 from random import seed
 
 from pypdf import PdfReader
@@ -90,6 +91,16 @@ def build_resumer_record(pdf_path,first_n_chars=MIN_RESUME_TEXT_CHARS):
     resume_dict["created_at"] = created_at
     return resume_dict
 
+def validate_resumer_record(resumer_record):
+    if 'raw_text' not in resumer_record:
+        metrics['errors'].append('resumer_record must contain "raw_text" field')
+    if 'clean_text' not in resumer_record:
+        metrics['errors'].append('resumer_record must contain "clean_text" field')
+    if errors:
+        return False
+    has_problem,reason=detect_scan_or_empty(resumer_record["raw_text"],resumer_record["page_count"])
+    if has_problem:
+        metrics['errors'].append(f'detect reason: {reason}')
 
 
 
