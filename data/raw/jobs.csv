@@ -1,0 +1,6 @@
+title,company,location,date_posted,description,url,source
+Junior Data Engineer,Raymond James,Tampa,2026-02-01,"Build and maintain ETL pipelines in Python/SQL, work with data quality checks, and support analytics teams. Skills: Python, SQL, ETL, AWS basics, Git.","https://example.com/rj-junior-data-engineer","manual_csv"
+Data Analyst (Python),Jabil,Tampa,2026-01-28,"Analyze datasets using Python and SQL, create dashboards, and perform data cleaning/validation. Skills: Python, SQL, Pandas, visualization.","https://example.com/jabil-data-analyst","manual_csv"
+AI / Prompt Engineering Intern,ReliaQuest,Tampa,2026-02-03,"Assist with LLM prompt workflows, evaluate outputs, and build small automation scripts. Skills: Python, prompt engineering, JSON, evaluation.","https://example.com/reliaquest-prompt-intern","manual_csv"
+Junior Data Pipeline Developer,TechDataCo,Tampa,2026-02-05,"Implement batch ingestion jobs from CSV/API, validate schemas, log metrics, and store processed data. Skills: Python, logging, data contracts, SQL.","https://example.com/techdataco-pipeline-junior","manual_csv"
+Machine Learning Analyst (Entry),ConnectWise,Tampa,2026-01-30,"Support ML experiments, prepare datasets, feature engineering, and model evaluation. Skills: Python, pandas, scikit-learn basics.","https://example.com/connectwise-ml-analyst","manual_csv"
