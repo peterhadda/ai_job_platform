@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import re
 
 from config import *
@@ -70,6 +71,18 @@ def detect_scanned_or_empty(job: dict) -> tuple[bool, list[str]]:
         return True, errors
 
     return False, []
+
+def make_job_id(job):
+    title=normalize_txt(job["title"])
+    company=normalize_txt(job["company"])
+    location=normalize_txt(job["location"])
+    url=normalize_txt(job["url"])
+    string_addtion=title+company+location+url
+    hash_object = hashlib.sha256(string_addtion)
+
+    return hash_object.hexdigest()
+
+
 
 
 
