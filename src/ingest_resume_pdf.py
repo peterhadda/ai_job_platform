@@ -9,6 +9,7 @@ Resume PDF ingestion (MVP)
 """
 
 import hashlib
+import json
 import os
 import re
 from datetime import datetime, timezone
@@ -16,9 +17,10 @@ from typing import Any, Dict, List, Tuple
 
 from pypdf import PdfReader
 
+
 # Prefer config.py constants if you have them; otherwise fallback defaults.
 try:
-    from config import RAW_RESUME_PDF_PATH, MAX_PAGES, MIN_RESUME_TEXT_CHARS  # type: ignore
+    from config import RAW_RESUME_PDF_PATH, MAX_PAGES, MIN_RESUME_TEXT_CHARS,OUTPUT_RESUME_JSON # type: ignore
 except Exception:
     RAW_RESUME_PDF_PATH = "data/raw/resume.pdf"
     MAX_PAGES = 5
@@ -211,7 +213,7 @@ def save_json(obj, output_path: str):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2, ensure_ascii=False)
 
-OUTPUT_RESUME_JSON = "data/processed/resume.json"
+
 
 
 def run_and_save_resume():
@@ -219,9 +221,9 @@ def run_and_save_resume():
 
     if metrics["valid"]:
         save_json(resume_record, OUTPUT_RESUME_JSON)
-        print("✅ resume.json successfully created at:", OUTPUT_RESUME_JSON)
+        print("resume.json successfully created at:", OUTPUT_RESUME_JSON)
     else:
-        print("❌ Resume ingestion failed. Errors:")
+        print(" Resume ingestion failed. Errors:")
         for err in metrics["errors"]:
             print(" -", err)
 
@@ -248,3 +250,4 @@ if __name__ == "__main__":
     preview = (record.get("clean_text") or "")[:400]
     print("\nTEXT PREVIEW (first 400 chars):")
     print(preview)
+    run_and_save_resume()
