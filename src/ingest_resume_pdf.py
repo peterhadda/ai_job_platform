@@ -198,6 +198,32 @@ def run_resume_ingestion(pdf_path: str = RAW_RESUME_PDF_PATH) -> Tuple[Dict[str,
     metrics["warnings"] = sorted(set(all_warnings))
 
     return resume_record, metrics
+    
+def save_json(obj, output_path: str):
+    """
+    Saves a Python object as pretty JSON.
+    Ensures the parent directory exists.
+    """
+    parent_dir = os.path.dirname(output_path)
+    if parent_dir:
+        os.makedirs(parent_dir, exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+
+OUTPUT_RESUME_JSON = "data/processed/resume.json"
+
+
+def run_and_save_resume():
+    resume_record, metrics = run_resume_ingestion(RAW_RESUME_PDF_PATH)
+
+    if metrics["valid"]:
+        save_json(resume_record, OUTPUT_RESUME_JSON)
+        print("✅ resume.json successfully created at:", OUTPUT_RESUME_JSON)
+    else:
+        print("❌ Resume ingestion failed. Errors:")
+        for err in metrics["errors"]:
+            print(" -", err)
 
 
 if __name__ == "__main__":
