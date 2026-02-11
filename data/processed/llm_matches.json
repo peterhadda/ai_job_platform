@@ -1,0 +1,91 @@
+[
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Junior Data Engineer",
+    "company": "raymond james",
+    "score": 60,
+    "verdict": "maybe",
+    "matched_skills": [
+      "python",
+      "git"
+    ],
+    "missing_skills": [
+      "sql",
+      "etl",
+      "aws basics"
+    ],
+    "reasoning": "The resume includes Python and Git, which are relevant to the job description, but lacks SQL, ETL experience, and AWS basics, which are critical for the Junior Data Engineer role."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Data Analyst (Python)",
+    "company": "jabil",
+    "score": 40,
+    "verdict": "maybe",
+    "matched_skills": [
+      "python"
+    ],
+    "missing_skills": [
+      "sql",
+      "pandas",
+      "data visualization"
+    ],
+    "reasoning": "The resume includes Python as a skill but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "AI / Prompt Engineering Intern",
+    "company": "reliaquest",
+    "score": 40,
+    "verdict": "maybe",
+    "matched_skills": [
+      "python"
+    ],
+    "missing_skills": [
+      "prompt engineering",
+      "json",
+      "evaluation"
+    ],
+    "reasoning": "The resume includes Python as a skill, which is relevant, but lacks specific experience or skills in prompt engineering, JSON, and evaluation, which are critical for the job."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Junior Data Pipeline Developer",
+    "company": "techdataco",
+    "score": 40,
+    "verdict": "maybe",
+    "matched_skills": [
+      "python",
+      "sql"
+    ],
+    "missing_skills": [
+      "batch ingestion jobs",
+      "csv",
+      "api",
+      "validate schemas",
+      "log metrics",
+      "data contracts"
+    ],
+    "reasoning": "The resume includes relevant skills in Python and SQL, but lacks specific experience or mention of batch ingestion jobs, data validation, and logging metrics, which are critical for the role."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Machine Learning Analyst (Entry)",
+    "company": "connectwise",
+    "score": 70,
+    "verdict": "maybe",
+    "matched_skills": [
+      "python",
+      "scikit-learn"
+    ],
+    "missing_skills": [
+      "pandas"
+    ],
+    "reasoning": "The resume demonstrates relevant skills in Python and scikit-learn, which are essential for the role. However, the absence of experience with pandas, a key requirement for data preparation, affects the overall fit."
+  }
+]

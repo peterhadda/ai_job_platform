@@ -1,13 +1,16 @@
 import os
 import json
+from typing import List, Dict, Any
+
 from openai import OpenAI
-from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON
+
+from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON,OUTPUT_MATCHES_LLM_JSON
 # ---- Settings ----
 N_JOBS = 5
 MODEL = "gpt-4o-mini"
 TEMPERATURE = 0
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key="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")
 
 
 def load_json(path: str) -> Any:
@@ -80,7 +83,7 @@ def validate_llm_result(obj: Dict[str, Any]) -> Dict[str, Any]:
     if not isinstance(obj["reasoning"], str):
         raise ValueError("reasoning must be a string")
 
-    # Light cleanup
+
     obj["reasoning"] = obj["reasoning"].strip()
     return obj
 
@@ -104,8 +107,8 @@ def score_resume_job(resume_text: str, job: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def run_llm_matching() -> List[Dict[str, Any]]:
-    resume = load_json(RESUME_PATH)
-    jobs = load_json(JOBS_PATH)
+    resume = load_json(OUTPUT_RESUME_JSON)
+    jobs = load_json(OUTPUT_JOBS_JSON)
 
     resume_id = resume.get("resume_id", "")
     resume_text = resume.get("clean_text", "")
@@ -141,5 +144,5 @@ def run_llm_matching() -> List[Dict[str, Any]]:
 
 if __name__ == "__main__":
     matches = run_llm_matching()
-    save_json(matches, OUTPUT_PATH)
-    print(f"✅ Saved {len(matches)} LLM matches to: {OUTPUT_PATH}"
+    save_json(matches, OUTPUT_MATCHES_LLM_JSON)
+    print(f"✅ Saved {len(matches)} LLM matches to: {OUTPUT_MATCHES_LLM_JSON}")
