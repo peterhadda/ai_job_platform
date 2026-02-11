@@ -32,7 +32,8 @@ JOBS_PATH: Path = OUTPUT_JOBS_JSON
 MATCHES_PATH: Path = OUTPUT_MATCHES_LLM_JSON
 
 st.set_page_config(page_title="AI Job Match Platform", layout="wide")
-
+st.sidebar.write("OPENAI KEY LOADED:", bool(os.environ.get("OPENAI_API_KEY")))
+st.sidebar.write("KEY starts with:", os.environ.get("OPENAI_API_KEY")[:10])
 
 # -----------------------
 # JSON helpers
