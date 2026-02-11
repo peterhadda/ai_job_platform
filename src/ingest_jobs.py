@@ -1,6 +1,7 @@
 import csv
 import hashlib
 import re
+from email.contentmanager import raw_data_manager
 
 from config import *
 
@@ -81,6 +82,30 @@ def make_job_id(job):
     hash_object = hashlib.sha256(string_addtion)
 
     return hash_object.hexdigest()
+
+def ingest_jobs_csv():
+    clean_jobs=[]
+    metric={"total_rows":0,"valid_rows":0,"dropped_rows":0,"drop_reasons":[]}
+    raw_data_manager=load_jobs_from_csv(RAW_JOBS_PATH)
+
+    for row in raw_data_manager:
+        metric["total_rows"]+=1
+        job_cleaned=clean_job_record(row)
+        if job_cleaned:
+
+            metric["valid_rows"]+=1
+            id=make_job_id(job_cleaned)
+            job_cleaned.update({"id":id})
+            clean_jobs.append(job_cleaned)
+
+        else:
+            metric["dropped_rows"]+=1
+            metric["drop_reasons"].append(detect_scanned_or_empty(job_cleaned))
+            continue
+
+    return clean_jobs
+
+
 
 
 
