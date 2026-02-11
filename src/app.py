@@ -11,6 +11,7 @@ import os
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON,OUTPUT_MATCHES_LLM_JSON
 
 import streamlit as st
 import pandas as pd
@@ -23,9 +24,12 @@ except Exception:
     OpenAI = None  # type: ignore
 
 # ---- Paths ----
-RESUME_PATH = Path("data/processed/resume.json")
-JOBS_PATH = Path("data/processed/jobs_clean.json")
-MATCHES_PATH = Path("data/processed/matches_llm.json")
+
+
+# ---- Paths ----
+RESUME_PATH = OUTPUT_RESUME_JSON
+JOBS_PATH = OUTPUT_JOBS_JSON
+MATCHES_PATH = OUTPUT_MATCHES_LLM_JSON
 
 st.set_page_config(page_title="AI Job Match Platform", layout="wide")
 
