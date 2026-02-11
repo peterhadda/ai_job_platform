@@ -1,18 +1,14 @@
-# src/fetch_jobs_adzuna.py
-# ✅ Updated to save processed jobs to OUTPUT_JOBS_JSON (what Streamlit reads)
-# ✅ Fixed return paths
-# ✅ Added missing Path import
-# ✅ Kept your logic/style, only corrected the parts that broke UI updates
+# fetch_jobs_adzuna.py
 
 import os
 import json
-from pathlib import Path
-from typing import Any, Dict, List, Tuple
-import requests
-import hashlib
 import re
+import hashlib
+from typing import Any, Dict, List, Tuple
 
-from config import RAW_API_PATH, OUTPUT_JOBS_JSON  # <-- use the correct config outputs
+import requests
+
+from config import RAW_API_PATH, OUTPUT_JOBS_JSON, OUTPUT_API_PATH  # all are Path objects
 
 
 def normalize_text(s: str) -> str:
@@ -20,28 +16,30 @@ def normalize_text(s: str) -> str:
         return ""
     s = s.replace("\r\n", "\n").replace("\r", "\n")
     s = s.strip()
-    s = re.sub(r"\s+", " ", s)
+    s = re.sub(r"[ \t]+", " ", s)
     s = re.sub(r"\n{3,}", "\n\n", s)
     return s
 
 
 def make_job_id(title: str, company: str, location: str, url: str) -> str:
     seed = f"{title.lower().strip()}|{company.lower().strip()}|{location.lower().strip()}|{url.strip()}"
-    # md5 is fine for deterministic IDs here (not for security)
     return hashlib.md5(seed.encode("utf-8")).hexdigest()
+
+
+def save_json(obj: Any, path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
 
 
 def fetch_adzuna_jobs(
     query: str,
     location: str,
-    country: str = "us",
+    country: str = "ca",
     pages: int = 1,
     results_per_page: int = 20,
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
-    """
-    Fetch jobs from Adzuna Search endpoint (paged).
-    country examples: us, ca, gb, fr...
-    """
+
     app_id = os.environ.get("ADZUNA_APP_ID")
     app_key = os.environ.get("ADZUNA_APP_KEY")
     if not app_id or not app_key:
@@ -64,23 +62,16 @@ def fetch_adzuna_jobs(
         r = requests.get(url, params=params, timeout=30)
         r.raise_for_status()
         payload = r.json()
-
         results = payload.get("results", [])
-        all_results.extend(results)
 
+        all_results.extend(results)
         metrics["pages_fetched"] += 1
         metrics["jobs_fetched"] = len(all_results)
 
     return all_results, metrics
 
 
-def transform_to_canonical(
-    adzuna_results: List[Dict[str, Any]],
-    source: str = "adzuna"
-) -> List[Dict[str, Any]]:
-    """
-    Transform Adzuna fields into YOUR canonical job schema.
-    """
+def transform_to_canonical(adzuna_results: List[Dict[str, Any]], source: str = "adzuna") -> List[Dict[str, Any]]:
     clean_jobs: List[Dict[str, Any]] = []
 
     for r in adzuna_results:
@@ -91,7 +82,6 @@ def transform_to_canonical(
         url = normalize_text(r.get("redirect_url", ""))
         date_posted = normalize_text(r.get("created", ""))
 
-        # Required field validation
         if not title or not company or not location or not description:
             continue
 
@@ -108,42 +98,40 @@ def transform_to_canonical(
             "source": source,
         })
 
-    # Deduplicate by job_id
-    dedup: Dict[str, Dict[str, Any]] = {}
+    # dedupe by job_id
+    dedup = {}
     for j in clean_jobs:
         dedup[j["job_id"]] = j
     return list(dedup.values())
 
 
-def save_json(obj: Any, path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
 def fetch_transform_save(
     query: str,
     location: str,
-    country: str = "us",
+    country: str = "ca",
     pages: int = 1,
     results_per_page: int = 20,
 ) -> Dict[str, Any]:
-    # Ensure config paths are Path objects
-    raw_path = Path(RAW_API_PATH)
-    processed_path = Path(OUTPUT_JOBS_JSON)
 
     raw_results, metrics = fetch_adzuna_jobs(query, location, country, pages, results_per_page)
 
-    # Save raw traceability payload
-    save_json({"results": raw_results, "metrics": metrics}, raw_path)
+    # 1) Save RAW (traceability)
+    save_json({"results": raw_results, "metrics": metrics}, RAW_API_PATH)
 
-    # Transform + save canonical jobs where Streamlit reads from
+    # 2) Transform -> canonical
     clean_jobs = transform_to_canonical(raw_results, source="adzuna")
-    save_json(clean_jobs, processed_path)
+
+    # 3) Save PROCESSED jobs to the SAME file Streamlit reads
+    save_json(clean_jobs, OUTPUT_JOBS_JSON)
+
+    # 4) Optional: also save a second copy (cleaned api)
+    save_json(clean_jobs, OUTPUT_API_PATH)
 
     return {
-        "raw_saved_to": str(raw_path),
-        "processed_saved_to": str(processed_path),
+        "raw_saved_to": str(RAW_API_PATH),
+        "processed_jobs_saved_to": str(OUTPUT_JOBS_JSON),
+        "extra_clean_copy_saved_to": str(OUTPUT_API_PATH),
         "raw_count": len(raw_results),
         "clean_count": len(clean_jobs),
-        **metrics
+        **metrics,
     }
