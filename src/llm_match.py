@@ -145,4 +145,4 @@ def run_llm_matching() -> List[Dict[str, Any]]:
 if __name__ == "__main__":
     matches = run_llm_matching()
     save_json(matches, OUTPUT_MATCHES_LLM_JSON)
-    print(f"✅ Saved {len(matches)} LLM matches to: {OUTPUT_MATCHES_LLM_JSON}")
+    print(f" Saved {len(matches)} LLM matches to: {OUTPUT_MATCHES_LLM_JSON}")
