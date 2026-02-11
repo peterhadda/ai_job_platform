@@ -1,36 +1,24 @@
+# llm_match.py
 import os
 import json
-from typing import List, Dict, Any
+from typing import Any, Dict, Optional
 
-from openai import OpenAI
-
-from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON,OUTPUT_MATCHES_LLM_JSON
-# ---- Settings ----
-N_JOBS = 5
-MODEL = "gpt-4o-mini"
-TEMPERATURE = 0
-
-client = OpenAI(api_key="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")
+try:
+    from openai import OpenAI
+except Exception:
+    OpenAI = None  # type: ignore
 
 
-def load_json(path: str) -> Any:
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-def save_json(obj: Any, path: str) -> None:
-    parent = os.path.dirname(path)
-    if parent:
-        os.makedirs(parent, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(obj, f, indent=2, ensure_ascii=False)
+def get_openai_client() -> Optional[Any]:
+    if OpenAI is None:
+        return None
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        return None
+    return OpenAI(api_key=api_key)
 
 
 def build_prompt(resume_text: str, job: Dict[str, Any]) -> str:
-    job_title = job.get("title", "")
-    job_desc = job.get("description", "")
-    job_company = job.get("company", "")
-
     return f"""
 You are a strict evaluator.
 Compare the resume to the job posting.
@@ -48,52 +36,55 @@ Return ONLY valid JSON with exactly this structure:
 Rules:
 - score is an integer from 0 to 100
 - verdict must be one of: "yes", "maybe", "no"
-- matched_skills and missing_skills are short skill phrases (strings)
+- matched_skills and missing_skills are short skill phrases
 - reasoning is 1-2 sentences max
 
 RESUME TEXT:
 {resume_text}
 
-JOB TITLE: {job_title}
-COMPANY: {job_company}
+JOB TITLE: {job.get("title","")}
+COMPANY: {job.get("company","")}
 
 JOB DESCRIPTION:
-{job_desc}
+{job.get("description","")}
 """.strip()
 
 
 def validate_llm_result(obj: Dict[str, Any]) -> Dict[str, Any]:
-    required_keys = ["score", "verdict", "matched_skills", "missing_skills", "reasoning"]
-    for k in required_keys:
+    required = ["score", "verdict", "matched_skills", "missing_skills", "reasoning"]
+    for k in required:
         if k not in obj:
             raise ValueError(f"Missing key: {k}")
 
     if not isinstance(obj["score"], int) or not (0 <= obj["score"] <= 100):
-        raise ValueError("score must be an int between 0 and 100")
+        raise ValueError("score must be int 0..100")
 
     if obj["verdict"] not in ["yes", "maybe", "no"]:
         raise ValueError('verdict must be "yes", "maybe", or "no"')
 
     if not isinstance(obj["matched_skills"], list):
         raise ValueError("matched_skills must be a list")
-
     if not isinstance(obj["missing_skills"], list):
         raise ValueError("missing_skills must be a list")
-
     if not isinstance(obj["reasoning"], str):
         raise ValueError("reasoning must be a string")
-
 
     obj["reasoning"] = obj["reasoning"].strip()
     return obj
 
 
-def score_resume_job(resume_text: str, job: Dict[str, Any]) -> Dict[str, Any]:
+def score_resume_job_llm(
+    client: Any,
+    model: str,
+    resume_text: str,
+    job: Dict[str, Any],
+    temperature: float = 0.0
+) -> Dict[str, Any]:
     prompt = build_prompt(resume_text, job)
 
-    response = client.chat.completions.create(
-        model=MODEL,
-        temperature=TEMPERATURE,
+    resp = client.chat.completions.create(
+        model=model,
+        temperature=temperature,
         response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": "You output only JSON. No extra text."},
@@ -101,48 +92,5 @@ def score_resume_job(resume_text: str, job: Dict[str, Any]) -> Dict[str, Any]:
         ],
     )
 
-    raw = response.choices[0].message.content
-    parsed = json.loads(raw)
+    parsed = json.loads(resp.choices[0].message.content)
     return validate_llm_result(parsed)
-
-
-def run_llm_matching() -> List[Dict[str, Any]]:
-    resume = load_json(OUTPUT_RESUME_JSON)
-    jobs = load_json(OUTPUT_JOBS_JSON)
-
-    resume_id = resume.get("resume_id", "")
-    resume_text = resume.get("clean_text", "")
-
-    results: List[Dict[str, Any]] = []
-
-    for job in jobs[:N_JOBS]:
-        job_id = job.get("job_id", "")
-        title = job.get("title", "")
-        company = job.get("company", "")
-
-        try:
-            llm_result = score_resume_job(resume_text, job)
-            results.append({
-                "resume_id": resume_id,
-                "job_id": job_id,
-                "title": title,
-                "company": company,
-                **llm_result
-            })
-        except Exception as e:
-            # Don’t crash; record the error for that job
-            results.append({
-                "resume_id": resume_id,
-                "job_id": job_id,
-                "title": title,
-                "company": company,
-                "error": str(e)
-            })
-
-    return results
-
-
-if __name__ == "__main__":
-    matches = run_llm_matching()
-    save_json(matches, OUTPUT_MATCHES_LLM_JSON)
-    print(f" Saved {len(matches)} LLM matches to: {OUTPUT_MATCHES_LLM_JSON}")
