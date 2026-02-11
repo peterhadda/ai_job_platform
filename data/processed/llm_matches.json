@@ -15,7 +15,7 @@
       "etl",
       "aws basics"
     ],
-    "reasoning": "The resume demonstrates proficiency in Python and Git, which are relevant to the job. However, it lacks explicit experience with SQL, ETL processes, and AWS basics, which are essential for the Junior Data Engineer position."
+    "reasoning": "The resume demonstrates proficiency in Python and Git, which are relevant to the job. However, it lacks specific experience with SQL, ETL processes, and AWS, which are critical for the Junior Data Engineer position."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -30,9 +30,9 @@
     "missing_skills": [
       "sql",
       "pandas",
-      "visualization"
+      "data visualization"
     ],
-    "reasoning": "The resume includes Python as a skill, but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
+    "reasoning": "The resume includes Python as a skill but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -49,7 +49,7 @@
       "json",
       "evaluation"
     ],
-    "reasoning": "The resume includes Python as a skill, which is relevant, but lacks specific experience or skills in prompt engineering, JSON, and evaluation, which are critical for the job."
+    "reasoning": "The resume includes Python as a skill, which is relevant to the job, but lacks specific experience or skills in prompt engineering, JSON, and evaluation, which are critical for the role."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -70,7 +70,7 @@
       "log metrics",
       "data contracts"
     ],
-    "reasoning": "The resume includes relevant skills in Python and SQL, but lacks specific experience with batch ingestion jobs, data validation, and logging metrics as required by the job description."
+    "reasoning": "The resume includes relevant skills in Python and SQL, but lacks specific experience or mention of batch ingestion jobs, data validation, and logging metrics, which are critical for the role."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -86,6 +86,6 @@
     "missing_skills": [
       "pandas"
     ],
-    "reasoning": "The resume demonstrates relevant experience with Python and scikit-learn, but lacks mention of pandas, which is essential for the role."
+    "reasoning": "The candidate has relevant experience with Python and scikit-learn, but lacks specific mention of pandas, which is essential for the role."
   }
 ]
