@@ -1,41 +1,6 @@
 [
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "Junior Data Engineer",
-    "company": "raymond james",
-    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "Data Analyst (Python)",
-    "company": "jabil",
-    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "AI / Prompt Engineering Intern",
-    "company": "reliaquest",
-    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "Junior Data Pipeline Developer",
-    "company": "techdataco",
-    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "Machine Learning Analyst (Entry)",
-    "company": "connectwise",
-    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
     "job_id": "idx_0",
     "title": "Junior Data Engineer",
     "company": "raymond james",
@@ -68,5 +33,24 @@
       "data visualization"
     ],
     "reasoning": "The resume includes Python as a skill but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "fee567d832ac04ff1de91d9330c1d8d5",
+    "title": "Senior Data Engineer- Snowflake",
+    "company": "tiger analytics inc.",
+    "score": 40,
+    "verdict": "maybe",
+    "matched_skills": [
+      "machine learning",
+      "data science"
+    ],
+    "missing_skills": [
+      "Snowflake",
+      "data engineering",
+      "advanced analytics",
+      "business value generation"
+    ],
+    "reasoning": "The resume includes some relevant skills in machine learning and data science, but lacks specific experience or skills related to Snowflake and data engineering, which are critical for the Senior Data Engineer position."
   }
 ]

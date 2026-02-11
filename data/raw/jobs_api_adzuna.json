@@ -1,8 +1,631 @@
 {
-  "results": [],
+  "results": [
+    {
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU3NjUwMDU2NyIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.Xj5zkyg1bS-xTWrbW330kAsInDGdljbVBVuYXJUSyLc",
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_max": 110000,
+      "redirect_url": "https://www.adzuna.ca/details/5576500567?utm_medium=api&utm_source=496d0d83",
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "salary_min": 80000,
+      "latitude": 45.544959,
+      "company": {
+        "display_name": "Datatonic",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "salary_is_predicted": "0",
+      "title": "Data Engineer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "contract_time": "full_time",
+      "description": "Shape the Future of AI & Data with Us At Datatonic, we are Google Cloud's premier partner in AI, driving transformation for world-class businesses. We push the boundaries of technology with expertise in machine learning, data engineering, and analytics on Google Cloud Platform. By partnering with us, clients future-proof their operations, unlock actionable insights, and stay ahead of the curve in a rapidly evolving world. Your Mission Data Engineers at Datatonic work across a wide range of proj…",
+      "longitude": -73.588138,
+      "created": "2026-01-09T14:06:36Z",
+      "id": "5576500567"
+    },
+    {
+      "category": {
+        "label": "IT Jobs",
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category"
+      },
+      "created": "2025-11-09T05:49:26Z",
+      "latitude": 45.50456,
+      "id": "5488130283",
+      "longitude": -73.56971,
+      "redirect_url": "https://www.adzuna.ca/details/5488130283?utm_medium=api&utm_source=496d0d83",
+      "description": "PURPOSE As a Data Engineer, you will be responsible for designing, implementing, and maintaining data pipelines that support data migration, analytics, business intelligence functions, and integration with Microsoft Dynamics 365 (D365) applications. You will work closely with analysts and business stakeholders to ensure that data flows seamlessly through the organization and is ready for analysis. KEY RESPONSIBILITIES AND ACCOUNTABILITIES The responsibilities of this position include, but are n…",
+      "title": "Data Engineer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "contract_time": "full_time",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Westmount, Montréal",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal",
+          "Westmount"
+        ]
+      },
+      "salary_is_predicted": "0",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Kitco"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NDg4MTMwMjgzIn0.bmj_qnm1lFxl6CCiNgn6pU334phjrGUvz-mGht-251o"
+    },
+    {
+      "redirect_url": "https://www.adzuna.ca/details/5580939979?utm_medium=api&utm_source=496d0d83",
+      "description": "Position Description: Mode de travail: hybride, à préciser la fréquence CGI is seeking a Data Engineer to join its teams and support the design and evolution of large-scale analytics solutions. The ideal candidate brings strong data engineering expertise combined with proven experience in general infrastructure planning, a critical capability for building secure, scalable, and high-performing data platforms. This role is well suited for a proactive professional who thrives in complex, fast-pace…",
+      "id": "5580939979",
+      "latitude": 45.544959,
+      "created": "2026-01-12T14:04:48Z",
+      "category": {
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs"
+      },
+      "longitude": -73.588138,
+      "salary_is_predicted": "0",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU4MDkzOTk3OSIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.hQc4TLGYB6MsSm44N-jyzrEtTHVASspoEmoo78iw91c",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "CGI"
+      },
+      "contract_time": "full_time",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Data Engineer",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      }
+    },
+    {
+      "salary_max": 155000,
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NTc4MTQ3MDk2In0.vbno-D-HgbRsKU1ochsgAU2chRnsoyTvQGluJ2_NW9M",
+      "latitude": 45.544959,
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs",
+        "label": "IT Jobs"
+      },
+      "salary_min": 80000,
+      "redirect_url": "https://www.adzuna.ca/details/5578147096?utm_medium=api&utm_source=496d0d83",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "contract_time": "full_time",
+      "title": "Data Engineer ( Data & AI)",
+      "salary_is_predicted": "0",
+      "company": {
+        "display_name": "CGI",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "id": "5578147096",
+      "created": "2026-01-10T13:56:51Z",
+      "longitude": -73.588138,
+      "description": "Position Description: At CGI, we shape the future of artificial intelligence through practical and responsible solutions. Our AI Practice in Montréal is rapidly growing and brings together passionate experts who design, develop, and deliver data- and AI-driven solutions for clients across various industries such as energy, finance, public sector, manufacturing, and transportation. By joining our team, you will thrive in a collaborative and stimulating environment at the heart of large-scale pro…"
+    },
+    {
+      "redirect_url": "https://www.adzuna.ca/details/4017725795?utm_medium=api&utm_source=496d0d83",
+      "description": "Title: Data Engineer Location: Remote Duration: Contract Rate: $Open Requirements Technical expertise : BSc/MSc in Computer Science, Computer Science, Information Systems or related Technical Discipline 1-4 years’ experience in Data Engineer role ( 5-10 years for senior data engineer ) Deep knowledge of Python, SQL, and PySparkis required. Experience working with data pipelines, architecture principles, batch and stream processing systems, and DataOps. Experience working with large data sets, A…",
+      "created": "2023-04-03T14:58:39Z",
+      "category": {
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs"
+      },
+      "id": "4017725795",
+      "latitude": 45.544959,
+      "longitude": -73.588138,
+      "contract_type": "contract",
+      "salary_is_predicted": "0",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Two95 International Inc."
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI0MDE3NzI1Nzk1In0.Lbj7enmZTQpVi1lS6isQ3UJe-oK_oYW89gF4laXfEHI",
+      "title": "Data Engineer (Canada)",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    },
+    {
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "title": "Data Engineering Developer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "company": {
+        "display_name": "Vosker",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NjExNTg4ODg5In0.d_8Qi3ptJ4Eax6PX20jnO45b9m28l6h6cwocftyCV-M",
+      "salary_is_predicted": "0",
+      "longitude": -73.588138,
+      "created": "2026-02-03T04:06:31Z",
+      "category": {
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs"
+      },
+      "id": "5611588889",
+      "latitude": 45.544959,
+      "description": "Job Description The data engineer is responsible for designing, implementing and managing data pipelines and establishing data models to deliver reliable information to the various business lines of the company. Joining the data engineering team means growing in an environment where autonomy and initiative are valued. Here, you have the freedom to propose ideas, demonstrate resourcefulness, and embrace a results‑oriented approach. Responsabilities: Design, develop, and maintain cloud-based data…",
+      "redirect_url": "https://www.adzuna.ca/details/5611588889?utm_medium=api&utm_source=496d0d83"
+    },
+    {
+      "redirect_url": "https://www.adzuna.ca/details/5606187829?utm_medium=api&utm_source=496d0d83",
+      "description": "GHGSat is mapping and tracking the world's greenhouse gas (GHG) emitters. To achieve this goal GHGSat operates its own satellite and aircraft sensors to collect emissions data, and uses these with third-party data to inform an analytics pipeline that: Detects and quantifies GHG emissions Identifies and classifies potential GHG emitters Generates valuable insights for our customers We're looking for a Geospatial Data Engineer based in Montreal, Canada, who will play a key role in building and op…",
+      "category": {
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs"
+      },
+      "created": "2026-01-30T11:32:14Z",
+      "latitude": 45.544959,
+      "id": "5606187829",
+      "longitude": -73.588138,
+      "salary_is_predicted": "0",
+      "company": {
+        "display_name": "GHGSAT",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NjA2MTg3ODI5In0.bdufGqg_DhLgBA2IojS9PenmeXGzDdJehZj9adztWGU",
+      "title": "Geospatial Data Engineer",
+      "contract_time": "full_time",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      }
+    },
+    {
+      "redirect_url": "https://www.adzuna.ca/details/5579628637?utm_medium=api&utm_source=496d0d83",
+      "category": {
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs"
+      },
+      "salary_min": 110000,
+      "latitude": 45.544959,
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU3OTYyODYzNyIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.PLg2KM6bopGdYdleb9-80Y1wlWaNeLk8fObmSNxrVCY",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "salary_max": 140000,
+      "description": "Shape the Future of AI & Data with Us At Datatonic, we are Google Cloud's premier partner in AI, driving transformation for world-class businesses. We push the boundaries of technology with expertise in machine learning, data engineering, and analytics on Google Cloud Platform. By partnering with us, clients future-proof their operations, unlock actionable insights, and stay ahead of the curve in a rapidly evolving world. Your Mission Data Engineers at Datatonic work across a wide range of proj…",
+      "created": "2026-01-11T14:10:51Z",
+      "id": "5579628637",
+      "longitude": -73.588138,
+      "salary_is_predicted": "0",
+      "company": {
+        "display_name": "Datatonic",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "title": "Senior Data Engineer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "contract_time": "full_time"
+    },
+    {
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "title": "Senior Data Engineer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "company": {
+        "display_name": "Targeted Talent",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTYyMDM0OTE3MSIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0._hsocqVcaZTJU5M_M9uXA4od2g0lvgVX-qglQicpg_8",
+      "contract_type": "permanent",
+      "salary_is_predicted": "0",
+      "longitude": -73.588138,
+      "created": "2026-02-08T03:02:57Z",
+      "category": {
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs"
+      },
+      "id": "5620349171",
+      "latitude": 45.544959,
+      "description": "Job Description Job Description We are looking for an experienced Senior Data Engineer for our client. This is a permanent position that is completely remote! Our client is a global enterprise company with a product that you've likely used. Within this role, you'll have the chance to work on an application that is used by millions of users daily. With your expertise in BI, Data warehousing and big data you'll contribute to the expanding expertise of the team and keep data components current! Yo…",
+      "redirect_url": "https://www.adzuna.ca/details/5620349171?utm_medium=api&utm_source=496d0d83"
+    },
+    {
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Junior Data Engineer",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NjE3MDg5OTc2In0.cmnjnzfNxO7dBu7BM4ztnHHl-NxsP8JbzHBo6INCb9U",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Targeted Talent"
+      },
+      "salary_is_predicted": "0",
+      "contract_type": "permanent",
+      "longitude": -73.588138,
+      "id": "5617089976",
+      "latitude": 45.544959,
+      "created": "2026-02-06T03:10:36Z",
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "description": "Job Description Job Description We are looking for an experienced Junior Data Engineer for our client. This is a permanent position that is remote to start with later relocation to Calgary or Winnipeg . Our client is a global enterprise company with a product that you've likely used. You Have: Minimum 2  years professional working experience as a Data Engineer Strong Experience working with SQL and large data sets Hands-on experience coding in Python would be a strong asset Experience working w…",
+      "redirect_url": "https://www.adzuna.ca/details/5617089976?utm_medium=api&utm_source=496d0d83"
+    },
+    {
+      "salary_is_predicted": "0",
+      "company": {
+        "display_name": "Vosker",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NjE1Mzg2NjY2In0.8ygEgAWLt6EQVD3jadaWIFLHk1_rnAl2sNuw8Z_1p7k",
+      "title": "Data Engineering Developer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "redirect_url": "https://www.adzuna.ca/details/5615386666?utm_medium=api&utm_source=496d0d83",
+      "description": "Job Description Job Description Company Description VOSKER is a North American leader in remote area surveillance. Every day, we’re proud to help our customers keep an eye on what truly matters to them by developing solar-powered, cellular-connected cameras integrated with our exclusive platform. In a few words, at VOSKER: we perform, we think differently, and we take care of our people. We leverage our expertise to win as a team and redefine what’s possible! WHAT WE OFFER A work environment wh…",
+      "created": "2026-02-05T03:05:13Z",
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "id": "5615386666",
+      "latitude": 45.544959,
+      "longitude": -73.588138
+    },
+    {
+      "location": {
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "contract_time": "full_time",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Geospatial Data Engineer",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTYwNzMxODI3NyIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.p4Djzv20Kv8oX2z3P4xxQPzrAoJJ7qh1DSmRn8NeJ3E",
+      "company": {
+        "display_name": "Ghgsat",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "salary_is_predicted": "0",
+      "longitude": -73.588138,
+      "id": "5607318277",
+      "latitude": 45.544959,
+      "created": "2026-01-31T02:56:25Z",
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "description": "Job Description Job Description GHGSat is mapping and tracking the world's greenhouse gas (GHG) emitters. To achieve this goal GHGSat operates its own satellite and aircraft sensors to collect emissions data, and uses these with third-party data to inform an analytics pipeline that: Detects and quantifies GHG emissions Identifies and classifies potential GHG emitters Generates valuable insights for our customers We're looking for a Geospatial Data Engineer based in Montreal, Canada, who will pl…",
+      "redirect_url": "https://www.adzuna.ca/details/5607318277?utm_medium=api&utm_source=496d0d83"
+    },
+    {
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal",
+          "Saint-Laurent"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Saint-Laurent, Montréal"
+      },
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "contract_time": "full_time",
+      "title": "Lead Data Engineer",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTI0NjY1Mjg1MSIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.nK4EIztNTCqyswsH00w57TSpWSYEPww845ho-6TDJKg",
+      "company": {
+        "display_name": "Psycho Bunny",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "salary_is_predicted": "0",
+      "longitude": -73.73783,
+      "id": "5246652851",
+      "latitude": 45.49456,
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs",
+        "label": "IT Jobs"
+      },
+      "created": "2025-06-12T10:25:35Z",
+      "description": "Lead Data Engineer - Ville St-Laurent (Office first) Ready to hop into something extraordinary? We're Psycho Bunny - the rebelliously refined clothing brand turning heads with our premium quality, vibrant style, and that unmistakable logo. With over 200 points of sales worldwide (and counting!), we're on a mission to redefine bold standards in retail. The Opportunity The Data Engineer reports to the Director of Data and Analytics and plays a critical role in driving the company’s data strategy …",
+      "redirect_url": "https://www.adzuna.ca/details/5246652851?utm_medium=api&utm_source=496d0d83"
+    },
+    {
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec"
+      },
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Lead Data Engineer",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NjAzOTczOTgyIn0.N020Tlau3VnOD1RStl5lEH8sx9uzMOTjZuvFolJN8Cc",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Psycho Bunny"
+      },
+      "salary_is_predicted": "0",
+      "longitude": -73.588138,
+      "id": "5603973982",
+      "latitude": 45.544959,
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs",
+        "label": "IT Jobs"
+      },
+      "created": "2026-01-28T15:38:19Z",
+      "description": "Lead Data Engineer - Ville St-Laurent (Office first) Ready to hop into something extraordinary? We're Psycho Bunny - the rebelliously refined clothing brand turning heads with our premium quality, vibrant style, and that unmistakable logo. With over 200 points of sales worldwide (and counting!), we're on a mission to redefine bold standards in retail. The Opportunity The Data Engineer reports to the Director of Data and Analytics and plays a critical role in driving the company’s data strategy …",
+      "redirect_url": "https://www.adzuna.ca/details/5603973982?utm_medium=api&utm_source=496d0d83"
+    },
+    {
+      "longitude": -73.588138,
+      "latitude": 45.544959,
+      "id": "5598596956",
+      "category": {
+        "label": "IT Jobs",
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category"
+      },
+      "created": "2026-01-24T02:24:13Z",
+      "description": "Job Description Job Description Lead Data Engineer - Ville St-Laurent (Office first) Ready to hop into something extraordinary? We're Psycho Bunny - the rebelliously refined clothing brand turning heads with our premium quality, vibrant style, and that unmistakable logo. With over 200 points of sales worldwide (and counting!), we're on a mission to redefine bold standards in retail. The Opportunity The Data Engineer reports to the Director of Data and Analytics and plays a critical role in driv…",
+      "redirect_url": "https://www.adzuna.ca/details/5598596956?utm_medium=api&utm_source=496d0d83",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Lead Data Engineer",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU5ODU5Njk1NiIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.vVRjVDS950Mxb2QJfKY8-P4QkqIjCljtzCbOt9sTufk",
+      "company": {
+        "display_name": "Psycho Bunny Inc.",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "salary_is_predicted": "0"
+    },
+    {
+      "title": "Senior Data Engineer - Data Squad",
+      "contract_time": "full_time",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "location": {
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "salary_is_predicted": "0",
+      "company": {
+        "display_name": "Stay22",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI1NTAxOTQxOTc1In0.tdDyERhpgXxiM6UZsqFDEXY6hUuVk1Lakdn023Sz_xQ",
+      "created": "2025-11-18T12:03:13Z",
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs",
+        "label": "IT Jobs"
+      },
+      "id": "5501941975",
+      "latitude": 45.544959,
+      "longitude": -73.588138,
+      "redirect_url": "https://www.adzuna.ca/details/5501941975?utm_medium=api&utm_source=496d0d83",
+      "description": "- English to follow - À propos de Stay22 Chez Stay22, nous révolutionnons la manière dont les gens convertissent en ligne. Notre plateforme d'affiliation alimentée par l'IA aide les éditeurs, les plateformes de billetterie et les créateurs de contenu à débloquer de nouvelles sources de revenus tout en améliorant l'expérience utilisateur de leur audience. Chez Stay22, nos partenaires ne se contentent pas de gagner plus, ils offrent aussi plus. Rejoignez-nous et participez à quelque chose d'impor…"
+    },
+    {
+      "contract_time": "full_time",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Senior Data Engineer- Snowflake",
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiX283ZHFLRUg4UkdFTHYwMnRNQmRkZyIsImkiOiI0MzQ4MzQyNDg0In0.pUOxEUNT9Sk7UMYdUGrJrN8KKfZoW0npkqCHPirtWQQ",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Tiger Analytics Inc."
+      },
+      "latitude": 45.544959,
+      "id": "4348342484",
+      "created": "2023-10-03T16:44:19Z",
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "longitude": -73.588138,
+      "redirect_url": "https://www.adzuna.ca/details/4348342484?utm_medium=api&utm_source=496d0d83",
+      "description": "Tiger Analytics is a fast-growing advanced analytics consulting firm. Our consultants bring deep expertise in Data Science, Machine Learning and AI. We are the trusted analytics partner for several Fortune 100 companies, enabling them to generate business value from data. Our business value and leadership has been recognized by various market research firms, including Forrester and Gartner. We are looking for top-notch talent as we continue to build the best analytics global consulting team in …"
+    },
+    {
+      "description": "Job Description Job Description We are looking for an experienced Senior Data Engineer for our client. This is a permanent position that is remote to start with later relocation to Calgary or Winnipeg . Our client is a global enterprise company with a product that you've likely used. You Have: Minimum 4 years professional working experience as a Data Engineer Strong experience working with both batch and real-time ETL involving large data sets Experience mentoring and guiding Junior Data Engine…",
+      "redirect_url": "https://www.adzuna.ca/details/5620347200?utm_medium=api&utm_source=496d0d83",
+      "longitude": -73.588138,
+      "created": "2026-02-08T02:58:41Z",
+      "category": {
+        "label": "IT Jobs",
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category"
+      },
+      "latitude": 45.544959,
+      "id": "5620347200",
+      "company": {
+        "display_name": "Targeted Talent",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTYyMDM0NzIwMCIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.auDjnCitnsDqkyLk5ilV5HtixI9ps04T0IO6IBJJLts",
+      "salary_is_predicted": "0",
+      "contract_type": "permanent",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Montréal, Québec",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "title": "2 - Senior Data Engineer",
+      "__CLASS__": "Adzuna::API::Response::Job"
+    },
+    {
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Senior Data Engineering Lead",
+      "location": {
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ]
+      },
+      "salary_is_predicted": "0",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTUyMjExNjc5NSIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.W_Jl-tqZBfHr9ich4doCGTGIx9L2TnvLIoZfi7f3QII",
+      "company": {
+        "display_name": "TM8",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "id": "5522116795",
+      "latitude": 45.544959,
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "created": "2025-12-01T12:20:23Z",
+      "longitude": -73.588138,
+      "redirect_url": "https://www.adzuna.ca/details/5522116795?utm_medium=api&utm_source=496d0d83",
+      "description": "Senior Data Engineering Lead Our client is seeking a Senior Data Engineering Lead to take ownership of designing, maintaining, and delivering highly scalable, high-performance data solutions. Reporting to the Data Engineering Manager, this role is critical for empowering faster, simpler, and better decision-making across the organization . The successful candidate will ensure data reliability, accessibility, and optimization for advanced analytics while acting as a key driver of innovation with…"
+    },
+    {
+      "redirect_url": "https://www.adzuna.ca/details/5595271317?utm_medium=api&utm_source=496d0d83",
+      "description": "Job Description Job Description Tiger Analytics is a fast-growing advanced analytics consulting firm. Our consultants bring deep expertise in Data Science, Machine Learning and AI. We are the trusted analytics partner for several Fortune 100 companies, enabling them to generate business value from data. Our business value and leadership has been recognized by various market research firms, including Forrester and Gartner. We are looking for top-notch talent as we continue to build the best anal…",
+      "id": "5595271317",
+      "latitude": 45.544959,
+      "category": {
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "tag": "it-jobs"
+      },
+      "created": "2026-01-22T02:26:13Z",
+      "longitude": -73.588138,
+      "salary_is_predicted": "0",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU5NTI3MTMxNyIsInMiOiJfbzdkcUtFSDhSR0VMdjAydE1CZGRnIn0.6pQK5SVBuh05cIhPT84bt25YdW9IRpydH633gb26hcY",
+      "company": {
+        "display_name": "Tiger Analytics Inc.",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Senior Data Engineer- Snowflake",
+      "location": {
+        "area": [
+          "Canada",
+          "Québec",
+          "Montréal"
+        ],
+        "display_name": "Montréal, Québec",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  ],
   "metrics": {
     "pages_requested": 1,
     "pages_fetched": 1,
-    "jobs_fetched": 0
+    "jobs_fetched": 20
   }
 }
