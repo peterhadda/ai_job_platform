@@ -1,5 +1,7 @@
 import csv
 import hashlib
+import json
+import os
 import re
 from email.contentmanager import raw_data_manager
 
@@ -26,18 +28,25 @@ def normalize_txt(line):
     return line
 
 def clean_job_record(raw_job):
-    clean_jobs=raw_job
-    for jobs in clean_jobs:
-        stripped_dict={k.strip(): v.strip() for k, v in jobs.items()}
-        if "company" in stripped_dict:
-            stripped_dict["company"] = stripped_dict["company"].lower()
-        if "location" in stripped_dict:
-                stripped_dict["location"] = stripped_dict["location"].lower()
-        if "description" in stripped_dict:
-            stripped_dict["description"] = normalize_txt(stripped_dict["description"])
+    if not isinstance(raw_job, dict):
+        return None
 
+    stripped_dict = {
+        k.strip(): v.strip() if isinstance(v, str) else v
+        for k, v in raw_job.items()
+    }
 
-        return stripped_dict
+    if "company" in stripped_dict:
+        stripped_dict["company"] = stripped_dict["company"].lower()
+
+    if "location" in stripped_dict:
+        stripped_dict["location"] = stripped_dict["location"].lower()
+
+    if "description" in stripped_dict:
+        stripped_dict["description"] = normalize_txt(stripped_dict["description"])
+
+    return stripped_dict
+
 
 
 
@@ -74,21 +83,23 @@ def detect_scanned_or_empty(job: dict) -> tuple[bool, list[str]]:
     return False, []
 
 def make_job_id(job):
-    title=normalize_txt(job["title"])
-    company=normalize_txt(job["company"])
-    location=normalize_txt(job["location"])
-    url=normalize_txt(job["url"])
-    string_addtion=title+company+location+url
-    hash_object = hashlib.sha256(string_addtion)
+    title = normalize_txt(job.get("title", ""))
+    company = normalize_txt(job.get("company", ""))
+    location = normalize_txt(job.get("location", ""))
+    url = normalize_txt(job.get("url", ""))
+
+    string_addtion = title + company + location + url
+    hash_object = hashlib.sha256(string_addtion.encode("utf-8"))
 
     return hash_object.hexdigest()
+
 
 def ingest_jobs_csv():
     clean_jobs=[]
     metric={"total_rows":0,"valid_rows":0,"dropped_rows":0,"drop_reasons":[]}
-    raw_data_manager=load_jobs_from_csv(RAW_JOBS_PATH)
+    raw_data_manag=load_jobs_from_csv(RAW_JOBS_PATH)
 
-    for row in raw_data_manager:
+    for row in raw_data_manag:
         metric["total_rows"]+=1
         job_cleaned=clean_job_record(row)
         if job_cleaned:
@@ -103,13 +114,35 @@ def ingest_jobs_csv():
             metric["drop_reasons"].append(detect_scanned_or_empty(job_cleaned))
             continue
 
-    return clean_jobs
+    return clean_jobs,metric
+def save_json(obj, output_path: str):
+    """
+    Saves a Python object as pretty JSON.
+    Ensures the parent directory exists.
+    """
+    parent_dir = os.path.dirname(output_path)
+    if parent_dir:
+        os.makedirs(parent_dir, exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+
+def run_and_save_jobs():
+    jobs_record, metrics = ingest_jobs_csv()
+
+    if metrics["valid_rows"] > 0:
+        save_json(jobs_record, OUTPUT_JOBS_JSON)
+        print("jobs.json successfully created at:", OUTPUT_JOBS_JSON)
+    else:
+        print("Job ingestion failed.")
+        print("Drop reasons:")
+        for err in metrics["drop_reasons"]:
+            print(" -", err)
 
 
 
 
-
-
+run_and_save_jobs()
 
 
 
