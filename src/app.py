@@ -217,7 +217,35 @@ resume_id = resume.get("resume_id", "")
 
 # Sidebar controls
 st.sidebar.header("LLM Settings")
-##
+# -----------------------
+# SIDEBAR SECTION
+# -----------------------
+
+st.sidebar.header("Online Jobs Import (Adzuna)")
+
+query = st.sidebar.text_input("Keyword", value="data engineer")
+where = st.sidebar.text_input("Location", value="Tampa")
+country = st.sidebar.text_input("Country code", value="us")
+pages = st.sidebar.number_input("Pages", min_value=1, max_value=5, value=1)
+per_page = st.sidebar.number_input("Results per page", min_value=10, max_value=50, value=20)
+
+if st.sidebar.button("🌐 Fetch jobs online"):
+    try:
+        with st.spinner("Fetching jobs from Adzuna..."):
+            summary = fetch_transform_save(
+                query=query,
+                location=where,
+                country=country,
+                pages=int(pages),
+                results_per_page=int(per_page),
+            )
+        st.sidebar.success("Jobs fetched + saved ✅")
+        st.sidebar.write(summary)
+        st.rerun()
+    except Exception as e:
+        st.sidebar.error(f"Fetch failed: {e}")
+        
+        
 model = st.sidebar.text_input("Model", value="gpt-4o-mini")
 temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.0, 0.1)
 n_jobs_batch = st.sidebar.number_input("Batch run N jobs", min_value=1, max_value=min(200, len(jobs)), value=min(5, len(jobs)))
