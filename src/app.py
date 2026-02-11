@@ -1,14 +1,17 @@
-import os
-import json
+from dotenv import load_dotenv
 from pathlib import Path
+load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
+import os
+print("OPEN_AI loaded?",bool(os.environ.get("OPENAI_API_KEY")))
+import json
+
 from typing import Any, Dict, List, Optional
 
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
 from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON, OUTPUT_MATCHES_LLM_JSON
-from src.fetch_jobs_adzuna import fetch_transform_save
+from fetch_jobs_adzuna import fetch_transform_save
 
 # Optional: LLM calling
 try:

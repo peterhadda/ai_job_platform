@@ -4,6 +4,41 @@
     "job_id": "",
     "title": "Junior Data Engineer",
     "company": "raymond james",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Data Analyst (Python)",
+    "company": "jabil",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "AI / Prompt Engineering Intern",
+    "company": "reliaquest",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Junior Data Pipeline Developer",
+    "company": "techdataco",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "",
+    "title": "Machine Learning Analyst (Entry)",
+    "company": "connectwise",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************9Q4A. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}"
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "idx_0",
+    "title": "Junior Data Engineer",
+    "company": "raymond james",
     "score": 60,
     "verdict": "maybe",
     "matched_skills": [
@@ -19,7 +54,7 @@
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
+    "job_id": "idx_1",
     "title": "Data Analyst (Python)",
     "company": "jabil",
     "score": 40,
@@ -33,59 +68,5 @@
       "data visualization"
     ],
     "reasoning": "The resume includes Python as a skill but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "AI / Prompt Engineering Intern",
-    "company": "reliaquest",
-    "score": 40,
-    "verdict": "maybe",
-    "matched_skills": [
-      "python"
-    ],
-    "missing_skills": [
-      "prompt engineering",
-      "json",
-      "evaluation"
-    ],
-    "reasoning": "The resume includes Python as a skill, which is relevant to the job, but lacks specific experience or skills in prompt engineering, JSON, and evaluation, which are critical for the role."
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "Junior Data Pipeline Developer",
-    "company": "techdataco",
-    "score": 40,
-    "verdict": "maybe",
-    "matched_skills": [
-      "python",
-      "sql"
-    ],
-    "missing_skills": [
-      "batch ingestion jobs",
-      "csv",
-      "api",
-      "validate schemas",
-      "log metrics",
-      "data contracts"
-    ],
-    "reasoning": "The resume includes relevant skills in Python and SQL, but lacks specific experience or mention of batch ingestion jobs, data validation, and logging metrics, which are critical for the role."
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "",
-    "title": "Machine Learning Analyst (Entry)",
-    "company": "connectwise",
-    "score": 70,
-    "verdict": "maybe",
-    "matched_skills": [
-      "python",
-      "scikit-learn"
-    ],
-    "missing_skills": [
-      "pandas"
-    ],
-    "reasoning": "The candidate has relevant experience with Python and scikit-learn, but lacks specific mention of pandas, which is essential for the role."
   }
 ]

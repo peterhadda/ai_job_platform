@@ -10,4 +10,4 @@ OUTPUT_RESUME_JSON=BASE_DIR /"data"/"processed"/"resume.json"
 OUTPUT_JOBS_JSON=BASE_DIR /"data"/"processed"/"jobs.json"
 OUTPUT_MATCHES_JSON=BASE_DIR /"data"/"processed"/"matches.json"
 OUTPUT_MATCHES_LLM_JSON=BASE_DIR /"data"/"processed"/"llm_matches.json"
-OUTPUT_API_PATH=BASE_DIR /"data"/"raw"/ 'jobs_api_cleaned.json'
+OUTPUT_API_PATH=BASE_DIR /"data"/"processed"/ 'jobs_api_cleaned.json'
