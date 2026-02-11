@@ -1,16 +1,14 @@
-
-
 import os
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON,OUTPUT_MATCHES_LLM_JSON
-
-from src.fetch_jobs_adzuna import fetch_transform_save
 
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+
+from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON, OUTPUT_MATCHES_LLM_JSON
+from src.fetch_jobs_adzuna import fetch_transform_save
 
 # Optional: LLM calling
 try:
@@ -18,13 +16,11 @@ try:
 except Exception:
     OpenAI = None  # type: ignore
 
-# ---- Paths ----
-
 
 # ---- Paths ----
-RESUME_PATH = OUTPUT_RESUME_JSON
-JOBS_PATH = OUTPUT_JOBS_JSON
-MATCHES_PATH = OUTPUT_MATCHES_LLM_JSON
+RESUME_PATH = Path(OUTPUT_RESUME_JSON)
+JOBS_PATH = Path(OUTPUT_JOBS_JSON)
+MATCHES_PATH = Path(OUTPUT_MATCHES_LLM_JSON)
 
 st.set_page_config(page_title="AI Job Match Platform", layout="wide")
 
@@ -136,7 +132,6 @@ def score_resume_job_llm(
 ) -> Dict[str, Any]:
     prompt = build_prompt(resume_text, job)
 
-    # JSON mode: ensure strictly JSON output
     resp = client.chat.completions.create(
         model=model,
         temperature=temperature,
@@ -166,10 +161,6 @@ def missing_skill_counts(matches: List[Dict[str, Any]]) -> Dict[str, int]:
     return counts
 
 
-def normalize_job_text(job: Dict[str, Any]) -> str:
-    return f"{job.get('title','')}\n\n{job.get('description','')}".strip()
-
-
 # -----------------------
 # Load files
 # -----------------------
@@ -184,8 +175,8 @@ st.title("AI Job Market Intelligence & Resume Matching Platform (Streamlit Demo)
 if resume is None or jobs is None:
     st.error(
         "Missing required files. Make sure you have:\n"
-        "- data/processed/resume.json\n"
-        "- data/processed/jobs_clean.json\n"
+        f"- {RESUME_PATH}\n"
+        f"- {JOBS_PATH}\n"
         "(matches_llm.json is optional for first run)"
     )
     st.stop()
@@ -194,7 +185,7 @@ if not isinstance(jobs, list):
     st.error("jobs_clean.json must be a list of job objects.")
     st.stop()
 
-# Session state storage (so clicking buttons updates UI immediately)
+# Session state storage
 if "matches_state" not in st.session_state:
     st.session_state["matches_state"] = matches if isinstance(matches, list) else []
 if "selected_job_id" not in st.session_state:
@@ -215,12 +206,9 @@ for m in matches_state:
 resume_text = resume.get("clean_text", "")
 resume_id = resume.get("resume_id", "")
 
-# Sidebar controls
-st.sidebar.header("LLM Settings")
 # -----------------------
-# SIDEBAR SECTION
+# SIDEBAR SECTION (FIXED ORDER)
 # -----------------------
-
 st.sidebar.header("Online Jobs Import (Adzuna)")
 
 query = st.sidebar.text_input("Keyword", value="data engineer")
@@ -244,8 +232,8 @@ if st.sidebar.button("🌐 Fetch jobs online"):
         st.rerun()
     except Exception as e:
         st.sidebar.error(f"Fetch failed: {e}")
-        
-        
+
+st.sidebar.header("LLM Settings")
 model = st.sidebar.text_input("Model", value="gpt-4o-mini")
 temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.0, 0.1)
 n_jobs_batch = st.sidebar.number_input("Batch run N jobs", min_value=1, max_value=min(200, len(jobs)), value=min(5, len(jobs)))
@@ -288,7 +276,6 @@ with tab1:
 with tab2:
     st.subheader("Job selection + LLM matching")
 
-    # Job picker
     st.write("### 1) Pick a job")
     job_labels = []
     for jid in job_ids:
@@ -326,10 +313,8 @@ with tab2:
             st.write("**Score:**", existing.get("score"))
             st.write("**Verdict:**", existing.get("verdict"))
             st.write("**Reasoning:**", existing.get("reasoning", ""))
-
             st.write("**Matched skills:**")
             st.write(safe_list(existing.get("matched_skills")) or ["(none)"])
-
             st.write("**Missing skills:**")
             st.write(safe_list(existing.get("missing_skills")) or ["(none)"])
         else:
@@ -337,7 +322,6 @@ with tab2:
 
         st.divider()
 
-        # Run LLM button
         can_run = client is not None
         if st.button("🤖 Run LLM on this job", disabled=not can_run):
             if not can_run:
@@ -362,22 +346,14 @@ with tab2:
 
                         # upsert into session state
                         match_by_job_id[selected_job_id] = new_entry
-                        # rebuild matches_state list
-                        updated = []
-                        seen = set()
-                        for m in matches_state:
-                            jid = m.get("job_id")
-                            if jid == selected_job_id:
-                                continue
-                            updated.append(m)
-                            if jid:
-                                seen.add(jid)
+                        updated = [m for m in matches_state if m.get("job_id") != selected_job_id]
                         updated.append(new_entry)
                         matches_state = updated
                         st.session_state["matches_state"] = matches_state
 
                         if save_after_run:
                             save_json(matches_state, MATCHES_PATH)
+
                         st.success("Saved LLM result for selected job.")
                         st.rerun()
                     except Exception as e:
@@ -390,7 +366,6 @@ with tab2:
     if df.empty:
         st.info("No matches yet. Run the LLM on a job to generate matches.")
     else:
-        # Filters
         col1, col2, col3 = st.columns(3)
         with col1:
             verdict_filter = st.selectbox("Filter verdict", ["all", "yes", "maybe", "no"])
@@ -408,77 +383,6 @@ with tab2:
 
         st.dataframe(df2.head(int(show_top)), use_container_width=True)
 
-    st.divider()
-
-    st.write("### 3) Batch run (optional)")
-    st.caption("Runs LLM on the first N jobs that do NOT already have a stored match.")
-    if st.button("⚡ Run LLM batch on N jobs", disabled=(client is None)):
-        if client is None:
-            st.error("LLM not available. Install openai and set OPENAI_API_KEY.")
-        else:
-            remaining = []
-            for jid in job_ids:
-                if jid not in match_by_job_id:
-                    remaining.append(jid)
-                if len(remaining) >= int(n_jobs_batch):
-                    break
-
-            if not remaining:
-                st.info("All jobs already have matches (or none left within your batch size).")
-            else:
-                with st.spinner(f"Running LLM on {len(remaining)} jobs..."):
-                    new_items = []
-                    for jid in remaining:
-                        job = job_by_id[jid]
-                        try:
-                            llm = score_resume_job_llm(
-                                client=client,
-                                model=model,
-                                resume_text=resume_text,
-                                job=job,
-                                temperature=temperature
-                            )
-                            entry = {
-                                "resume_id": resume_id,
-                                "job_id": jid,
-                                "title": job.get("title", ""),
-                                "company": job.get("company", ""),
-                                **llm
-                            }
-                            new_items.append(entry)
-                            match_by_job_id[jid] = entry
-                        except Exception as e:
-                            new_items.append({
-                                "resume_id": resume_id,
-                                "job_id": jid,
-                                "title": job.get("title", ""),
-                                "company": job.get("company", ""),
-                                "error": str(e)
-                            })
-
-                    # merge: keep old + add new (upsert by job_id)
-                    merged = {m.get("job_id"): m for m in matches_state if m.get("job_id")}
-                    for item in new_items:
-                        merged[item.get("job_id")] = item
-
-                    matches_state = list(merged.values())
-                    st.session_state["matches_state"] = matches_state
-
-                    if save_after_run:
-                        save_json(matches_state, MATCHES_PATH)
-
-                st.success(f"Batch complete. Added/updated {len(remaining)} matches.")
-                st.rerun()
-
-    st.divider()
-    st.write("### Download matches")
-    st.download_button(
-        label="⬇️ Download matches_llm.json",
-        data=json.dumps(st.session_state["matches_state"], indent=2, ensure_ascii=False),
-        file_name="matches_llm.json",
-        mime="application/json"
-    )
-
 
 # -------------------------
 # TAB 3: Insights
@@ -491,7 +395,6 @@ with tab3:
         st.info("No matches yet. Generate some LLM matches first.")
         st.stop()
 
-    # Score stats
     if "score" in df.columns:
         scores = df["score"].dropna()
         c1, c2, c3 = st.columns(3)
@@ -504,7 +407,6 @@ with tab3:
 
     st.divider()
 
-    # Verdict counts chart
     st.write("### Verdict counts")
     if "verdict" in df.columns:
         verdict_counts = df["verdict"].value_counts(dropna=False)
@@ -518,7 +420,6 @@ with tab3:
 
     st.divider()
 
-    # Missing skills chart
     st.write("### Most common missing skills")
     counts = missing_skill_counts(st.session_state["matches_state"])
     if not counts:
@@ -538,7 +439,6 @@ with tab3:
 
     st.divider()
 
-    # Quick peek summary
     st.write("### Data summary")
     colA, colB = st.columns(2)
     with colA:
