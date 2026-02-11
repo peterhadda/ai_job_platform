@@ -1,17 +1,12 @@
-# app.py — Upgraded Streamlit demo
-# Features added:
-# ✅ Select a job and view full details
-# ✅ Select a match card and view LLM output side-by-side
-# ✅ “Run LLM on this job” button (interactive)
-# ✅ Batch run on top N jobs (optional)
-# ✅ Saves updated matches back to data/processed/matches_llm.json
-# ✅ Uses OPENAI_API_KEY from environment (NO hardcoded keys)
+
 
 import os
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from config import OUTPUT_RESUME_JSON, OUTPUT_JOBS_JSON,OUTPUT_MATCHES_LLM_JSON
+
+from src.fetch_jobs_adzuna import fetch_transform_save
 
 import streamlit as st
 import pandas as pd
@@ -222,6 +217,7 @@ resume_id = resume.get("resume_id", "")
 
 # Sidebar controls
 st.sidebar.header("LLM Settings")
+##
 model = st.sidebar.text_input("Model", value="gpt-4o-mini")
 temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.0, 0.1)
 n_jobs_batch = st.sidebar.number_input("Batch run N jobs", min_value=1, max_value=min(200, len(jobs)), value=min(5, len(jobs)))

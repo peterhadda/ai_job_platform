@@ -4,7 +4,7 @@ from typing import Any,Dict,List,Tuple
 import requests
 import hashlib
 import re
-
+from config import *
 def normalize_text(s):
     if not s:
         return ''
@@ -115,11 +115,11 @@ def fetch_transform_save(
     save_json({"results": raw_results, "metrics": metrics}, RAW_API_PATH)
 
     clean_jobs = transform_to_canonical(raw_results, source="adzuna")
-    save_json(clean_jobs, PROCESSED_JOBS_PATH)
+    save_json(clean_jobs, OUTPUT_API_PATH)
 
     return {
-        "raw_saved_to": str(RAW_API_PATH),
-        "processed_saved_to": str(PROCESSED_JOBS_PATH),
+        "raw_saved_to": str(OUTPUT_API_PATH),
+        "processed_saved_to": str(OUTPUT_API_PATH),
         "raw_count": len(raw_results),
         "clean_count": len(clean_jobs),
         **metrics
