@@ -1,3 +1,6 @@
+from __future__ import annotations
+from config import *
+
 """
 Simple Resume ↔ Job matcher (keyword overlap)
 
@@ -26,7 +29,7 @@ jobs.json:
 ]
 """
 
-from __future__ import annotations
+
 
 import json
 import re
@@ -205,9 +208,9 @@ def rank_jobs(resume: Dict[str, Any], jobs: List[Dict[str, Any]], top_k: int = 1
 # --------- 8) run_matching ---------
 def run_matching(
     *,
-    resume_path: str | Path = "data/processed/resume.json",
-    jobs_path: str | Path = "data/processed/jobs.json",
-    output_path: str | Path = "data/processed/matches.json",
+    resume_path: str | Path = OUTPUT_RESUME_JSON,
+    jobs_path: str | Path = OUTPUT_JOBS_JSON,
+    output_path: str | Path = OUTPUT_MATCHES_JSON,
     top_k: int = 10,
 ) -> List[Dict[str, Any]]:
     """

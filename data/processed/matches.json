@@ -1,0 +1,131 @@
+[
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "job_unknown",
+    "title": "Machine Learning Analyst (Entry)",
+    "company": "connectwise",
+    "score": 0.3,
+    "explanation": {
+      "matched_keywords": [
+        "evaluation",
+        "learn",
+        "learning",
+        "machine",
+        "python",
+        "scikit"
+      ],
+      "missing_keywords": [
+        "analyst",
+        "basics",
+        "connectwise",
+        "datasets",
+        "engineering",
+        "entry",
+        "experiments",
+        "feature",
+        "ml",
+        "model"
+      ]
+    }
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "job_unknown",
+    "title": "AI / Prompt Engineering Intern",
+    "company": "reliaquest",
+    "score": 0.166667,
+    "explanation": {
+      "matched_keywords": [
+        "evaluation",
+        "python",
+        "scripts"
+      ],
+      "missing_keywords": [
+        "prompt",
+        "engineering",
+        "ai",
+        "assist",
+        "automation",
+        "build",
+        "evaluate",
+        "intern",
+        "json",
+        "llm"
+      ]
+    }
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "job_unknown",
+    "title": "Junior Data Engineer",
+    "company": "raymond james",
+    "score": 0.095238,
+    "explanation": {
+      "matched_keywords": [
+        "python",
+        "git"
+      ],
+      "missing_keywords": [
+        "data",
+        "etl",
+        "sql",
+        "analytics",
+        "aws",
+        "basics",
+        "build",
+        "checks",
+        "engineer",
+        "james"
+      ]
+    }
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "job_unknown",
+    "title": "Junior Data Pipeline Developer",
+    "company": "techdataco",
+    "score": 0.090909,
+    "explanation": {
+      "matched_keywords": [
+        "api",
+        "python"
+      ],
+      "missing_keywords": [
+        "data",
+        "batch",
+        "contracts",
+        "csv",
+        "developer",
+        "implement",
+        "ingestion",
+        "jobs",
+        "junior",
+        "log"
+      ]
+    }
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "job_unknown",
+    "title": "Data Analyst (Python)",
+    "company": "jabil",
+    "score": 0.0625,
+    "explanation": {
+      "matched_keywords": [
+        "python"
+      ],
+      "missing_keywords": [
+        "data",
+        "sql",
+        "analyst",
+        "analyze",
+        "cleaning",
+        "create",
+        "dashboards",
+        "datasets",
+        "jabil",
+        "pandas"
+      ]
+    }
+  }
+]
