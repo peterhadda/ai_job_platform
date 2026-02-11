@@ -15,7 +15,7 @@
       "etl",
       "aws basics"
     ],
-    "reasoning": "The resume includes Python and Git, which are relevant to the job description, but lacks SQL, ETL experience, and AWS basics, which are critical for the Junior Data Engineer role."
+    "reasoning": "The resume demonstrates proficiency in Python and Git, which are relevant to the job. However, it lacks explicit experience with SQL, ETL processes, and AWS basics, which are essential for the Junior Data Engineer position."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -30,9 +30,9 @@
     "missing_skills": [
       "sql",
       "pandas",
-      "data visualization"
+      "visualization"
     ],
-    "reasoning": "The resume includes Python as a skill but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
+    "reasoning": "The resume includes Python as a skill, but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -70,7 +70,7 @@
       "log metrics",
       "data contracts"
     ],
-    "reasoning": "The resume includes relevant skills in Python and SQL, but lacks specific experience or mention of batch ingestion jobs, data validation, and logging metrics, which are critical for the role."
+    "reasoning": "The resume includes relevant skills in Python and SQL, but lacks specific experience with batch ingestion jobs, data validation, and logging metrics as required by the job description."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
@@ -86,6 +86,6 @@
     "missing_skills": [
       "pandas"
     ],
-    "reasoning": "The resume demonstrates relevant skills in Python and scikit-learn, which are essential for the role. However, the absence of experience with pandas, a key requirement for data preparation, affects the overall fit."
+    "reasoning": "The resume demonstrates relevant experience with Python and scikit-learn, but lacks mention of pandas, which is essential for the role."
   }
 ]
