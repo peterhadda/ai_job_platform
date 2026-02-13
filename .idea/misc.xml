@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (ai_job_platform)" />
   </component>
+  <component name="ProjectRootManager" version="2" default="true" />
 </project>

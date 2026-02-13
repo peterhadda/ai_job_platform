@@ -1,56 +1,105 @@
 [
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "idx_0",
-    "title": "Junior Data Engineer",
-    "company": "raymond james",
-    "score": 60,
+    "job_id": "5508f442b978fdd2ee356bca5b651855",
+    "title": "Data Engineer",
+    "company": "datatonic",
+    "score": 40,
     "verdict": "maybe",
     "matched_skills": [
+      "machine learning",
       "python",
+      "javascript",
       "git"
     ],
     "missing_skills": [
-      "sql",
-      "etl",
-      "aws basics"
+      "data engineering",
+      "google cloud platform",
+      "analytics"
     ],
-    "reasoning": "The resume demonstrates proficiency in Python and Git, which are relevant to the job. However, it lacks specific experience with SQL, ETL processes, and AWS, which are critical for the Junior Data Engineer position."
+    "reasoning": "The resume includes relevant skills in machine learning and programming languages, but lacks specific experience in data engineering and familiarity with Google Cloud Platform, which are critical for the Data Engineer position."
   },
   {
     "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "idx_1",
-    "title": "Data Analyst (Python)",
-    "company": "jabil",
+    "job_id": "3e4d0a50e4c1ecc909834402ee831e85",
+    "title": "Data Engineer",
+    "company": "kitco",
+    "score": 30,
+    "verdict": "no",
+    "matched_skills": [
+      "python",
+      "git",
+      "data pipelines"
+    ],
+    "missing_skills": [
+      "data migration",
+      "business intelligence",
+      "microsoft dynamics 365",
+      "analytics"
+    ],
+    "reasoning": "The resume includes some relevant programming skills and experience with data handling, but lacks specific experience in data migration, business intelligence, and integration with Microsoft Dynamics 365, which are critical for the Data Engineer role."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "c8f666798a18ebebb7cd060f8d3c5a58",
+    "title": "Data Engineer",
+    "company": "cgi",
+    "score": 30,
+    "verdict": "no",
+    "matched_skills": [
+      "python",
+      "git",
+      "javascript"
+    ],
+    "missing_skills": [
+      "data engineering",
+      "infrastructure planning",
+      "analytics solutions",
+      "data platforms"
+    ],
+    "reasoning": "The resume includes some relevant programming skills but lacks specific experience in data engineering and infrastructure planning, which are critical for the job."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "abc935d29c068c730d809e27315c8ca7",
+    "title": "Data Engineer ( Data & AI)",
+    "company": "cgi",
     "score": 40,
     "verdict": "maybe",
+    "matched_skills": [
+      "python",
+      "machine learning",
+      "git",
+      "agile methodologies"
+    ],
+    "missing_skills": [
+      "data engineering",
+      "data modeling",
+      "SQL",
+      "ETL processes",
+      "cloud platforms"
+    ],
+    "reasoning": "The resume includes relevant programming and machine learning skills, but lacks specific experience in data engineering, data modeling, and ETL processes which are crucial for the Data Engineer position."
+  },
+  {
+    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
+    "job_id": "39e387785ff16e5848efd8a5a0e18aba",
+    "title": "Data Engineer (Canada)",
+    "company": "two95 international inc.",
+    "score": 30,
+    "verdict": "no",
     "matched_skills": [
       "python"
     ],
     "missing_skills": [
       "sql",
-      "pandas",
-      "data visualization"
+      "pyspark",
+      "data pipelines",
+      "architecture principles",
+      "batch processing",
+      "stream processing",
+      "dataops"
     ],
-    "reasoning": "The resume includes Python as a skill but lacks experience with SQL, pandas, and data visualization, which are essential for the Data Analyst position."
-  },
-  {
-    "resume_id": "c0c4f563716579dbbe3dc48c3481718083edcf5740d337ef91f67e7513fe39a0",
-    "job_id": "fee567d832ac04ff1de91d9330c1d8d5",
-    "title": "Senior Data Engineer- Snowflake",
-    "company": "tiger analytics inc.",
-    "score": 40,
-    "verdict": "maybe",
-    "matched_skills": [
-      "machine learning",
-      "data science"
-    ],
-    "missing_skills": [
-      "Snowflake",
-      "data engineering",
-      "advanced analytics",
-      "business value generation"
-    ],
-    "reasoning": "The resume includes some relevant skills in machine learning and data science, but lacks specific experience or skills related to Snowflake and data engineering, which are critical for the Senior Data Engineer position."
+    "reasoning": "The candidate has experience with Python but lacks the required SQL and PySpark skills, as well as experience in data engineering principles and practices, making them unsuitable for the role."
   }
 ]
